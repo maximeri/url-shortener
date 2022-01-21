@@ -1,8 +1,17 @@
-<form action="/" method="post">
-<div class="input-group mb-3">
-  <input type="url" class="form-control" placeholder="Input URL here" aria-label="URL">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Shorten</button>
-  </div>
+<div class="container">
+  {{#unless isSuccessful}}
+  <form action="/" method="POST">
+    <div class="input-group mb-3">
+      <input type="url" name="url" class="form-control mt-3" placeholder="Input URL here" aria-label="URL">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary mt-3" type="submit" id="button-addon2">Shorten</button>
+      </div>
+    </div>
+  </form>
+  {{/unless}}
+  {{#if isSuccessful}}
+  <h2>Success! Please use this link:</h2>
+  <h3><a href={{shortenedURL}}>{{shortenedURL}}</a></h3>
+  <a href="/">Create another</a>
+  {{/if}}
 </div>
-</form>

@@ -10,4 +10,3 @@ db.on('error', () => {
 })
 
 module.exports = db
-module.exports = mongoose
